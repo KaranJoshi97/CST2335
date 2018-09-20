@@ -3,8 +3,6 @@ package AndroidLabs;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.karan.myapplication.R;
-
 public class StartActivity extends Activity {
 
     @Override

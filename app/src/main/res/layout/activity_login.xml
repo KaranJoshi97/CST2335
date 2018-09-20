@@ -20,7 +20,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="login name"
+        android:text="@string/Login_Name"
         android:inputType="textEmailAddress"/>
 
     <TextView

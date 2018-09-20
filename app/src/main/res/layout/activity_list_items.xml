@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:gravity="fill"
-        android:text="RadioButton" />
+        android:text="@string/RadioButton_Title" />
 
     <Switch
         android:id="@+id/switch1"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:gravity="fill"
-        android:text="What does this do?" />
+        android:text="@string/Switch_Title" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:gravity="fill"
-        android:text="CheckBox" />
+        android:text="@string/CheckBox_Title" />
 
     <ImageButton
         android:id="@+id/imageButton1"
