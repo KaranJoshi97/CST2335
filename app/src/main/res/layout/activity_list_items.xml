@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:rowCount="2"
     android:columnCount="2"
-    tools:context="com.example.karan.myapplication.ListItemsActivity">
+    tools:context="AndroidLabs.ListItemsActivity">
 
     <RadioButton
         android:id="@+id/radioButton"
