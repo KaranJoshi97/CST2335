@@ -1,15 +1,13 @@
-package AndroidLabs;
+package com.example.karan.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.karan.myapplication.R;
-
-public class LoginActivity extends Activity {
+public class StartActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_start);
     }
 }
