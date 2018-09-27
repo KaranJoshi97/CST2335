@@ -8,4 +8,12 @@
     <string name="RadioButton_Title">RadioButton</string>
     <string name="CheckBox_Title">CheckBox</string>
     <string name="Switch_Title">What does this do?</string>
+
+    <string name="Button_Login">Login</string>
+    <string name="onSwitch">Switch is turned on</string>
+    <string name="offSwitch">Switch is turned off</string>
+    <string name="dialog_message">Do you want to quit?</string>
+    <string name="dialog_title">Dialog Title</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
 </resources>

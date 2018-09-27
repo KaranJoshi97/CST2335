@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name="AndroidLabs.StartActivity">
+
+        </activity>
+
+        <activity android:name="AndroidLabs.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,17 +22,11 @@
             </intent-filter>
         </activity>
 
-
-
-        <activity android:name="AndroidLabs.LoginActivity">
-
-        </activity>
-
-
-
         <activity android:name="AndroidLabs.ListItemsActivity">
 
         </activity>
     </application>
 
+    <uses-permission android:name="android.hardware.camera"
+                     android:required="true" />
 </manifest>

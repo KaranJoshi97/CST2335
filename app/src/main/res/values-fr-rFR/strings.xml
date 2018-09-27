@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="hello_message">Bonjour!</string>
+    <string name="ButtonText">Je suis un bouton</string>
+    <string name="Login_Title">S\'identifier</string>
+    <string name="Login_Name">Nom d\'utilisateur</string>
+    <string name="Password_Title">Mot de Passe</string>
+    <string name="RadioButton_Title">Bouton Radio</string>
+    <string name="CheckBox_Title">Case à Cocher</string>
+    <string name="Switch_Title">Qu\'est-ce que cela fait?</string>
+
+    <string name="Button_Login">Bouton de connexion</string>
+    <string name="onSwitch">Sur l\'interrupteur</string>
+    <string name="offSwitch">Interrupteur</string>
+    <string name="dialog_message">Message de dialogue?</string>
+    <string name="dialog_title">Login de Dialogue</string>
+    <string name="ok">Oui</string>
+    <string name="cancel">Non</string>
+</resources>
