@@ -2,6 +2,7 @@
     <string name="app_name">Lab2</string>
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText">I\'m a button</string>
+
     <string name="Login_Title">Login</string>
     <string name="Login_Name">Login Name</string>
     <string name="Password_Title">Password</string>
@@ -16,4 +17,10 @@
     <string name="dialog_title">Dialog Title</string>
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
+
+    <string name="startChat">Start Chat</string>
+    <string name="sendButton">Send</string>
+    <string name="text">New Text</string>
+    <string name="todo">TODO</string>
+
 </resources>

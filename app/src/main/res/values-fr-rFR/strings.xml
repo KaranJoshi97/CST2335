@@ -17,4 +17,9 @@
     <string name="dialog_title">Login de Dialogue</string>
     <string name="ok">Oui</string>
     <string name="cancel">Non</string>
+
+    <string name="startChat">Démarrer la discussion</string>
+    <string name="sendButton">Envoyer</string>
+    <string name="text">Nouveau Texte</string>
+    <string name="todo">Tout</string>
 </resources>

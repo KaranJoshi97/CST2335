@@ -18,14 +18,24 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         Log.i(ACTIVITY_NAME, "In onCreate()"); // Step 3 for Lab 3
+       // Log.i(ACTIVITY_NAME, "User clicked Start Chat");
 
         // Step 6 for Lab 3
         Button mainButton = (Button) findViewById(R.id.button);
-
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent nextScreen = new Intent(StartActivity.this, ListItemsActivity.class);
+                startActivityForResult(nextScreen, 50);
+            }
+        });
+
+        Button startChat = (Button) findViewById(R.id.button2);
+        startChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                Intent nextScreen = new Intent(StartActivity.this, ChatWindow.class);
                 startActivityForResult(nextScreen, 50);
             }
         });
@@ -74,5 +84,6 @@ public class StartActivity extends Activity {
         super.onDestroy();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
+
 
 }
