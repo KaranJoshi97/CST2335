@@ -14,6 +14,10 @@ import android.content.Context;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 public class ChatWindow extends Activity {
 
     protected static final String ACTIVITY_NAME = "ChatWindow";
@@ -22,6 +26,10 @@ public class ChatWindow extends Activity {
     protected Button sendButton;
     protected ArrayList<String> chatMessagesList;
     protected ChatAdapter messageAdapter;
+
+    protected ContentValues contentValues;
+    protected ChatDatabaseHelper chatHelper;
+    protected SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,54 +40,71 @@ public class ChatWindow extends Activity {
         editText = (EditText)findViewById(R.id.editText);
         listView = (ListView)findViewById(R.id.chatView);
         sendButton = (Button)findViewById(R.id.sendButton);
-
         chatMessagesList = new ArrayList<>();
 
         //in this case, “this” is the ChatWindow, which is-A Context object
         final ChatAdapter messageAdapter = new ChatAdapter(this);
         listView.setAdapter(messageAdapter);
 
+        // Lab 5
+        contentValues = new ContentValues();
+        chatHelper = new ChatDatabaseHelper(this);
+        db = chatHelper.getWritableDatabase();
+
+        Cursor cursor = db.query(false, chatHelper.TABLE_NAME, new String[]{chatHelper.KEY_ID, chatHelper.KEY_MESSAGE},
+                null,null,null,null,null,null);
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            chatMessagesList.add(cursor.getString(cursor.getColumnIndex(chatHelper.KEY_MESSAGE)));
+            Log.i(ACTIVITY_NAME, "SQL MESSAGE:" + cursor.getString(cursor.getColumnIndex(chatHelper.KEY_MESSAGE)));
+            cursor.moveToNext();
+        }
+
+        Log.i(ACTIVITY_NAME, "Cursor's column count = " + cursor.getColumnCount());
+        for(int columnIndex = 0; columnIndex < cursor.getColumnCount(); columnIndex++){
+            Log.i(ACTIVITY_NAME, cursor.getColumnName(columnIndex));
+        }
+
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String messageText = editText.getText().toString();
                 chatMessagesList.add(messageText);
+                // Lab 5
+                contentValues.put(ChatDatabaseHelper.KEY_MESSAGE, editText.getText().toString());
+                db.insert(ChatDatabaseHelper.TABLE_NAME, null, contentValues);
                 messageAdapter.notifyDataSetChanged();
                 editText.setText("");
             }
         });
     }
 
-    // Steps 2 and 3 for Lab 3
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(ACTIVITY_NAME, "In onResume()");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(ACTIVITY_NAME, "In onStart()");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(ACTIVITY_NAME, "In onPause()");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(ACTIVITY_NAME, "In onStop()");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(ACTIVITY_NAME, "In onDestroy()");
-    }
+//    // Steps 2 and 3 for Lab 3
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        Log.i(ACTIVITY_NAME, "In onResume()");
+//    }
+//
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        Log.i(ACTIVITY_NAME, "In onStart()");
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        Log.i(ACTIVITY_NAME, "In onPause()");
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        Log.i(ACTIVITY_NAME, "In onStop()");
+//    }
 
 //    protected void onSendClick(View view){
 //        messageAdapter.notifyDataSetChanged();
@@ -117,5 +142,12 @@ public class ChatWindow extends Activity {
         public long getItemId(int position){
             return position;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
+        //Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 }
