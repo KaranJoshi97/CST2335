@@ -23,4 +23,13 @@
     <string name="text">New Text</string>
     <string name="todo">TODO</string>
 
+    <string name="weatherChat">Weather Forecast</string>
+
+    <string name="currentTemp">The current temperature is </string>
+    <string name="degrees">   Degrees Celsius</string>
+    <string name="minTemp">The minimum temperature for today is </string>
+    <string name="maxTemp">The maximum temperature for today is </string>
+    <string name="windSpeed">The current wind speed is </string>
+    <string name="metersPerSecond">  Metres per Second</string>
+
 </resources>

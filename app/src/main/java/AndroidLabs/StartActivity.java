@@ -18,7 +18,7 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         Log.i(ACTIVITY_NAME, "In onCreate()"); // Step 3 for Lab 3
-       // Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+        // Log.i(ACTIVITY_NAME, "User clicked Start Chat");
 
         // Step 6 for Lab 3
         Button mainButton = (Button) findViewById(R.id.button);
@@ -40,16 +40,28 @@ public class StartActivity extends Activity {
             }
         });
 
+        Button weatherChat = (Button) findViewById(R.id.button3);
+        weatherChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "Weather Forecast");
+                Intent nextScreen = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivityForResult(nextScreen, 50);
+            }
+        });
+
+
     }
+
     // Step 6 for Lab 3
     @Override
-    public void onActivityResult(int requestCode, int responseCode, Intent data){
+    public void onActivityResult(int requestCode, int responseCode, Intent data) {
 
         // Step 11 for Lab 3
-        if(requestCode == 50 && responseCode == Activity.RESULT_OK) {
+        if (requestCode == 50 && responseCode == Activity.RESULT_OK) {
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
             String messagePassed = data.getStringExtra("Response");
-            Toast toast = Toast.makeText(this, messagePassed, Toast.LENGTH_LONG );
+            Toast toast = Toast.makeText(this, messagePassed, Toast.LENGTH_LONG);
             toast.show();
         }
     }
@@ -84,6 +96,4 @@ public class StartActivity extends Activity {
         super.onDestroy();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
-
-
 }
