@@ -89,22 +89,18 @@ public class WeatherForecast extends Activity {
                     eventType = parser.getEventType();
                     if (eventType == START_TAG) {
                         if (option.equalsIgnoreCase("temperature")) {
-
                             // The progress of retrieving the data for the current temperature.
                             result[0] = parser.getAttributeValue(null, "value");
                             Log.i(ACTIVITY_NAME, "Current temperature is working");
                             publishProgress(25);
-
                             // The progress of retrieving the data for the minimum temperature.
                             result[1] = parser.getAttributeValue(null, "min");
                             Log.i(ACTIVITY_NAME, "Minimum temperature is working");
                             publishProgress(50);
-
                             // The progress of retrieving the data for the maximum temperature.
                             result[2] = parser.getAttributeValue(null, "max");
                             Log.i(ACTIVITY_NAME, "Maximum temperature is working");
                             publishProgress(75);
-
                             // The progress of retrieving the data for the weather image.
                         } else if (option.equalsIgnoreCase("weather")) {
                             result[3] = parser.getAttributeValue(null, "icon");
