@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/action_one"
+        android:title="choice1"
+        android:icon="@drawable/chocolate_bar"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/action_two"
+        android:title="choice2"
+        android:icon="@drawable/thanksgiving"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/action_three"
+        android:title="choice3"
+        android:icon="@drawable/vegetarian_food"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/menuItem"
+        android:title="About"
+        app:showAsAction="never" />
+
+
+</menu>

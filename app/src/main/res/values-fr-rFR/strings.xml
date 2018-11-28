@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab1</string>
+    <string name="app_name">Lab 8</string>
     <string name="hello_message">Bonjour!</string>
     <string name="ButtonText">Je suis un bouton</string>
+
     <string name="Login_Title">S\'identifier</string>
     <string name="Login_Name">Nom d\'utilisateur</string>
     <string name="Password_Title">Mot de Passe</string>
@@ -22,4 +23,15 @@
     <string name="sendButton">Envoyer</string>
     <string name="text">Nouveau Texte</string>
     <string name="todo">Tout</string>
+
+    <string name="weatherChat">Prévisions Météorologiques</string>
+
+    <string name="toolBar">Barre D\'outils de test</string>
+    <string name="toastString">Version 1.0 par Karan Joshi</string>
+    <string name="dialogAlert">Veux-tu y retourner?</string>
+    <string name="proceedButton">Oui</string>
+    <string name="cancelButton">Non</string>
+    <string name="typeNewMessage">Quel est ton nouveau message?</string>
+    <string name="goBackButton">Retourner</string>
+    <string name="newMessage">Enregistrer le nouveau message</string>
 </resources>

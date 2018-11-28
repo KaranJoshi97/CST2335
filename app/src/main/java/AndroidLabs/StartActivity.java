@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 
 public class StartActivity extends Activity {
@@ -44,8 +45,18 @@ public class StartActivity extends Activity {
         weatherChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(ACTIVITY_NAME, "Weather Forecast");
+                Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
                 Intent nextScreen = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivityForResult(nextScreen, 50);
+            }
+        });
+
+        Button toolBar = (Button) findViewById(R.id.button4);
+        toolBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Test Toolbar");
+                Intent nextScreen = new Intent(StartActivity.this, TestToolBar.class);
                 startActivityForResult(nextScreen, 50);
             }
         });

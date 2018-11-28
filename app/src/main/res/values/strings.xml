@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab2</string>
+    <string name="app_name">Lab 8</string>
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText">I\'m a button</string>
 
@@ -20,16 +20,26 @@
 
     <string name="startChat">Start Chat</string>
     <string name="sendButton">Send</string>
-    <string name="text">New Text</string>
+    <string name="text">Type new Text</string>
     <string name="todo">TODO</string>
 
     <string name="weatherChat">Weather Forecast</string>
 
+    <!--Not used-->
     <string name="currentTemp">The current temperature is </string>
-    <string name="degrees">   Degrees Celsius</string>
+    <string name="degrees">Degrees Celsius</string>
     <string name="minTemp">The minimum temperature for today is </string>
     <string name="maxTemp">The maximum temperature for today is </string>
     <string name="windSpeed">The current wind speed is </string>
     <string name="metersPerSecond">  Metres per Second</string>
+
+    <string name="toolBar">Test Toolbar</string>
+    <string name="toastString">Version 1.0 By Karan Joshi</string>
+    <string name="dialogAlert">Do you want to go back?</string>
+    <string name="proceedButton">Yes</string>
+    <string name="cancelButton">No</string>
+    <string name="typeNewMessage">What is your new message?</string>
+    <string name="goBackButton">Go back</string>
+    <string name="newMessage">Save new message</string>
 
 </resources>
